@@ -87,7 +87,7 @@ class XHS:
         self,
         mapping_data: dict = None,
         work_path="",
-        folder_name="Download",
+        folder_name="download/xhs_download",
         name_format="发布时间 作者昵称 作品标题",
         user_agent: str = None,
         cookie: str = "",

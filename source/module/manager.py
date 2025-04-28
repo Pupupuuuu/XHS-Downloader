@@ -68,7 +68,7 @@ class Manager:
         _print: bool,
     ):
         self.root = root
-        self.temp = root.joinpath("./temp")
+        self.temp = root.joinpath("temp")
         self.path = self.__check_path(path)
         self.folder = self.__check_folder(folder)
         self.blank_headers = HEADERS | {
@@ -127,14 +127,14 @@ class Manager:
 
     def __check_folder(self, folder: str) -> Path:
         folder = self.path.joinpath(folder or "Download")
-        folder.mkdir(exist_ok=True)
-        self.temp.mkdir(exist_ok=True)
+        folder.mkdir(parents=True, exist_ok=True)
+        self.temp.mkdir(parents=True, exist_ok=True)
         return folder
 
     @staticmethod
     def __check_root_again(root: Path) -> bool | Path:
         if root.resolve().parent.is_dir():
-            root.mkdir()
+            root.mkdir(parents=True)
             return root
         return False
 

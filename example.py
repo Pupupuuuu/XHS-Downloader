@@ -12,7 +12,7 @@ async def example():
     demo_link = "https://www.xiaohongshu.com/explore/XXX?xsec_token=XXX"
 
     # 实例对象
-    work_path = "D:\\"  # 作品数据/文件保存根路径，默认值：项目根路径
+    work_path = "./"  # 作品数据/文件保存根路径，默认值：项目根路径
     folder_name = "Download"  # 作品文件储存文件夹名称（自动创建），默认值：Download
     name_format = "作品标题 作品描述"
     user_agent = ""  # User-Agent
@@ -80,20 +80,15 @@ async def example_api():
 
 
 async def test():
-    url = ""
+    url = "https://www.xiaohongshu.com/explore/67fc8571000000000b02ed97?xsec_token=ABhAGGFUI7PnadcWR3_mFR3uI-4lXwWqXDorNVB5RyaYo=&xsec_source=pc_search&m_source=itab&source=web_explore_feed"
+    
     async with XHS(
         download_record=False,
-        # image_format="PNG",
-        # image_format="WEBP",
-        # image_format="JPEG",
-        # image_format="HEIC",
-        # image_format="AVIF",
-        # image_format="AUTO",
     ) as xhs:
         print(
             await xhs.extract(
                 url,
-                # download=True,
+                download=True,
             )
         )
 

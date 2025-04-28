@@ -113,11 +113,11 @@ class Download:
     def __generate_path(self, nickname: str, filename: str):
         if self.author_archive:
             folder = self.folder.joinpath(nickname)
-            folder.mkdir(exist_ok=True)
+            folder.mkdir(parents=True, exist_ok=True)
         else:
             folder = self.folder
         path = self.manager.archive(folder, filename, self.folder_mode)
-        path.mkdir(exist_ok=True)
+        path.mkdir(parents=True, exist_ok=True)
         return path
 
     def __ready_download_video(

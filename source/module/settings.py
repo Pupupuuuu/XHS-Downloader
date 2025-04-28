@@ -32,7 +32,7 @@ class Settings:
     encode = "UTF-8-SIG" if system() == "Windows" else "UTF-8"
 
     def __init__(self, root: Path = ROOT):
-        self.file = root.joinpath("./settings.json")
+        self.file = root.joinpath("settings.json")
 
     def run(self):
         return self.read() if self.file.is_file() else self.create()
