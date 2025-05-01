@@ -1,10 +1,11 @@
 from pathlib import Path
+import os
 
 VERSION_MAJOR = 2
 VERSION_MINOR = 5
 VERSION_BETA = True
 __VERSION__ = f"{VERSION_MAJOR}.{VERSION_MINOR}.{'beta' if VERSION_BETA else 'stable'}"
-ROOT = Path(__file__).resolve().parent.parent.parent
+ROOT = Path(os.getcwd())
 PROJECT = f"XHS-Downloader V{VERSION_MAJOR}.{VERSION_MINOR} {
     'Beta' if VERSION_BETA else 'Stable'
 }"

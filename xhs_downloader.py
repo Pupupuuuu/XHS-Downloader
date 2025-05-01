@@ -10,7 +10,7 @@ async def download_xhs(
         download: bool = True,
         index: list = None,
         work_path: str = "./",
-        folder_name: str = "Download",
+        folder_name: str = "download/xhs_download",
         name_format: str = "作品标题 作品描述",
         user_agent: str = "",
         cookie: str = "",
@@ -87,9 +87,8 @@ async def download_xhs(
 async def main():
     """测试下载器功能"""
     url = "https://www.xiaohongshu.com/explore/67fc8571000000000b02ed97?xsec_token=ABhAGGFUI7PnadcWR3_mFR3uI-4lXwWqXDorNVB5RyaYo=&xsec_source=pc_search&m_source=itab&source=web_explore_feed"
-    read_cookie = "chrome"
     # 测试默认配置下载
-    result = await download_xhs(url=url, read_cookie=read_cookie)
+    result = await download_xhs(url=url)
     print("下载结果:", result)
 
     # 可选：测试特定配置
